@@ -6,7 +6,6 @@
       link: https://github.com/naver/fixture-monkey
       description: | # this will include new lines to allow paragraphs
         * 네이버의 테스트 객체 생성 라이브러리 오픈소스인 Fixture monkey에 기여
-        * https://github.com/naver/fixture-monkey
 
     - layout: left
       title: LIVID 스터디 운영진
@@ -29,18 +28,20 @@
         * 상호 피드백을 통해 짜임새 있고 구조적인 아티클 작성
 
     - layout: left
-      title: 해커톤 참여
-      caption: UNITHON 9기
+      title: UNITHON 9기
+      caption: 해커톤 참여
       description: | # this will include new lines to allow paragraphs
         * 해커톤 참여 및 팀 내 대학생 참여자 멘토링
         * 푸시 서버 개발 및 서버 설계, 배포, 인프라 담당
 
     - layout: left
-      title: 구름톤 딥다이브 백엔드 과정 퍼실리테이터
+      title: 부트캠프 퍼실리테이터 활동
+      caption: 구름톤 딥다이브 백엔드 과정
       description: | # this will include new lines to allow paragraphs
         * 구름톤 딥다이브 백엔드 과정의 퍼실리테이터로 활동하며 기술과 프로젝트 피드백, 커리어 멘토링 진행
 
     - layout: left
-      title: Prime Career 백엔드 직무 과정 프로그램 제작
+      title: 백엔드 직무 과정 프로그램 제작
+      caption: Prime Career 백엔드 과정
       description: | # this will include new lines to allow paragraphs
         * 대학생, 전직자들의 진로 탐색을 위한 온라인 직무 체험 프로그램의 플랫폼 백엔드 과정 프로그램 제작
