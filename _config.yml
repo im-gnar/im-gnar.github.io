@@ -59,7 +59,7 @@ resume_email: code.gnar@gmail.com
 website: https://im-gnar.github.io
 
 # Dark Mode (true/false/never)
-darkmode: true
+darkmode: never
 
 # Social links
 linkedin_username: im-gnar
