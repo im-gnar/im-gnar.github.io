@@ -21,7 +21,7 @@ plainwhite:
   sitemap: true
   search: true
   # analytics_id: G-HCKCGPDD5F
-  dark_mode: true
+  dark_mode: never
   portfolio_image: "assets/images/portfolio.jpeg"
   html_lang: "KR"
   condensed_mobile:
