@@ -1,0 +1,39 @@
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>{{ site.resume_name }} | {{ site.resume_title }}</title>
+  {%- seo title=false -%}
+
+  <link
+    rel="stylesheet"
+    href="{{ '/assets/resume/main.css' | relative_url }}"
+  />
+  <link
+    rel="shortcut icon"
+    type="image/x-icon"
+    href="{{ site.favicon | default: '/assets/resume/favicon.ico' | relative_url }}"
+  />
+
+  {%- if jekyll.environment == 'production' and site.google_analytics -%} 
+    {%- include google-analytics.html -%}
+  {%- endif -%} 
+  
+  {%- if jekyll.environment == 'production' and site.gtm -%} 
+    {%- include resume/gtm_head.html -%}
+  {%- endif -%} 
+  
+  {%- if site.gtag -%} 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.gtag }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', '{{ site.gtag }}');
+    </script>
+    <!-- End global site tag (gtag.js) - Google Analytics -->
+  {%- endif -%}
+</head>

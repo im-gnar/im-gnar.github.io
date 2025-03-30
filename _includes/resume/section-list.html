@@ -1,0 +1,83 @@
+{% for item in include.content %}
+  {%- if forloop.last -%}
+    {% assign isFinalContent = true %}
+  {%- endif -%}
+
+  <div class="row clearfix layout layout-{{item.layout | default: 'left'}} border-{{item.border | default: 'no'}}">
+    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details {{item.left_area_vertical_align | default: ''}}">
+      <h4 id="{{ item.title | slugify }}">{{ item.title }}</h4>
+      {%- if item.sub_title -%}<p><b>{{ item.sub_title }}</b></p>{%- endif -%}
+      {%- if item.caption -%}<p>{{ item.caption }}</p>{%- endif -%}
+
+      {%- if item.link -%}
+        {% include resume/a.html href=item.link class="link" %}
+          {%- if item.link_text -%}
+            {{ item.link_text }}
+          {%- endif -%}
+        </a>
+      {%- endif -%}
+
+      <p class="no-print aditional-links">
+        {% for link in item.additional_links %}
+          {% include resume/a.html href=link.url class="" %}
+            <i class="{{ link.icon }}" title="{{ link.title | escape }}"></i>
+          </a>
+        {% endfor %}
+      </p>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content">
+      {%- if item.quote -%}
+        <p class="quote">{{ item.quote }}</p>
+      {%- endif -%}
+      
+      {%- if item.projects -%}
+      
+        {% for project in item.projects %}
+        <div class="project">
+
+          <h4>
+            <strong>{{ project.name }}</strong>
+          </h4>
+
+          {%- if project.duration -%}
+            <span class="duration">{{ project.duration }}</span>
+          {%- endif -%}
+
+          {%- if project.description -%}
+          <div class="project-section">
+            <h5>Description.</h5>
+            {{ project.description | strip | markdownify  }}
+          </div>
+          {%- endif -%}
+
+          {%- if project.what_did_I_do -%}
+          <div class="project-section">
+            <h5>What did I do.</h5>
+            {{ project.what_did_I_do | strip | markdownify  }}
+          </div>
+          {%- endif -%}
+
+          {%- if project.tech_stack -%}
+          <div class="project-section">
+            <h5>Tech Stack.</h5>
+            {{ project.tech_stack | strip | markdownify  }}
+          </div>
+          {%- endif -%}
+          
+        </div>
+
+        {% unless isFinalContent and forloop.last %}
+          <hr class="prj-separator"/>
+        {% endunless %}
+
+        {% endfor %}
+
+      {%- else -%}
+
+        {{ item.description | strip | markdownify }}
+        
+      {%- endif -%}
+
+    </div>
+  </div>
+{% endfor %}

@@ -1,0 +1,76 @@
+---
+layout: default
+---
+
+<div class="post-container">
+  <div class="post">
+    {{ content }} 
+    
+    {% assign categories_max = 0 %} 
+
+    {% for category in site.categories %} 
+      {% if category[1].size > categories_max %} 
+        {% assign categories_max = category[1].size %} 
+      {% endif %}
+    {% endfor %}
+
+    <h3 id="category-list">Category Index</h3>
+
+    <ul class="category-index">
+      {% for i in (1..categories_max) reversed %} 
+        {% for category in site.categories %} 
+          {% if category[1].size == i %}
+          <li class="category-index-box">
+            <a href="#{{ category[0] | slugify }}">
+              <strong class="category-index-name">{{ category[0] }}</strong>
+              <span class="category-index-count">{{ i }}</span>
+            </a>
+          </li>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    </ul>
+
+    {% for i in (1..categories_max) reversed %} 
+      {% for category in site.categories %} 
+        {% if category[1].size == i %}
+          <section
+            id="{{ category[0] | slugify | downcase }}"
+            class="category-section"
+          >
+            <h3 class="archive__subtitle">{{ category[0] }}</h3>
+            <div class="entries-{{ page.entries_layout | default: 'list' }}">
+              {% for post in category.last %}
+                <li
+                  class="entries-box"
+                  onclick="hrefLink('{{ post.url | relative_url }}')"
+                >
+                  {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
+                  <a class="entries-link">
+                    <h2 class="entries-title">{{ post.title | escape }}</h2>
+                  </a>
+                  <div class="entries-meta">
+                    <div class="entries-date">
+                      <i class="icon-calendar"></i>
+                      {{ post.date | date: date_format }}
+                    </div>
+                  </div>
+                  <div class="entries-post">
+                    {%- if site.show_excerpts -%} {{ post.excerpt }} {%- endif -%}
+                  </div>
+                </li>
+
+                {% unless forloop.last %}
+                  <hr class="post-separation" />
+                {% endunless %}
+              {% endfor %}
+            </div>
+            <a href="#category-list" class="back-to-top">
+              {{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top'}} &uarr;
+            </a>
+          </section>
+        {% endif %} 
+      {% endfor %} 
+    {% endfor %}
+  </div>
+</div>

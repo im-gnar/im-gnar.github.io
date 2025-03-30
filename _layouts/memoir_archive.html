@@ -1,0 +1,57 @@
+---
+layout: default
+---
+
+{%- if page.title -%}
+<h1 class="page-heading">{{ page.title }}</h1>
+{%- endif -%} 
+
+{{ content }} 
+
+{%- if site.posts.size > 0 -%}
+<ul class="posts">
+  <li class="posts-labelgroup" id="posts-labelgroup">
+    <h1 id="posts-label">posts</h1>
+    
+  </li>
+
+  {% assign filtered_posts = site.posts | where_exp:"item", "item.path contains 'memoirs'" %}
+  
+  {%- for post in filtered_posts -%}
+  <li class="post-box" onclick="hrefLink('{{ post.url | relative_url }}')">
+    {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y"
+    -%}
+    <a class="post-link">
+      <h2 class="post-title mb-0">{{ post.title | escape }}</h2>
+    </a>
+    <div class="post-meta">
+      <div class="post-date sm-font">
+        <i class="icon-calendar"></i>
+        {{ post.date | date: date_format }}
+      </div>
+      {%- if post.categories.size > 0-%}
+      <ul class="post-categories">
+        {%- for category in post.categories -%}
+        <li
+          onclick="javascript:event.stopPropagation();goCategoryPage('{{ category }}');"
+        >
+          {{ category }}
+        </li>
+        {%- endfor -%}
+      </ul>
+      {%- endif -%}
+    </div>
+    <div class="post sm-font">
+      {%- if site.show_excerpts -%} {{ post.excerpt }} {%- endif -%}
+    </div>
+  </li>
+  {% unless forloop.last %}
+  <hr class="post-separation" />
+  {% endunless %} 
+  {%- endfor -%}
+</ul>
+
+<!-- <p class="feed-subscribe"><svg class="svg-icon orange">
+		<use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"></use>
+	</svg><a href="{{ "/feed.xml" | relative_url }}">Subscribe</a></p> -->
+{%- endif -%}

@@ -1,0 +1,31 @@
+- title: Skill
+  layout: list
+  content:
+    - layout: left
+      left_area_vertical_align: top
+      title: BackEnd
+      description: | # this will include new lines to allow paragraphs
+        * Java17, Java21, Kotlin, SpringBoot, SpringCloud, MSA
+        * MongoDB, Redis, LocalCache, MySQL
+        * Spring Data JPA, Mybatis, Querydsl
+        * Junit5, Mockito, RestAssured, Spring REST Docs, Swagger
+        * Gradle, Maven
+    - layout: left
+      left_area_vertical_align: top
+      title: DevOps
+      description: | # this will include new lines to allow paragraphs
+        * Docker, Nginx, Pinpoint, ELK
+        * CI/CD, Jenkins, Github Actions
+        * Kubernetes
+        * MySQL, MariaDB, MSSQL, Redis, MongoDB
+        * Argo CD, Github Action, Jenkins, Ansible
+        * Tomcat, Nginx, Resin
+        * Linux(CentOS, Ubuntu)
+        * Docker, Docker-compose, Kubernetes, Kafka
+    - layout: left
+      left_area_vertical_align: top
+      title: Tools
+      description: | # this will include new lines to allow paragraphs
+        * IntelliJ IDEA, VSCode
+        * Git, Github
+        * Jira, Confluence

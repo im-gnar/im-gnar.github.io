@@ -1,0 +1,243 @@
+.dark,
+.dark * {
+  $dark_text_color: #f6f6f6;
+  $dark_link_color: #4da3ff;
+  background-color: rgb(26, 28, 29);
+  color: $dark_text_color;
+  border-color: #e6e6e6;
+
+  .about {
+    img.light {
+      display: none;
+    }
+    img.dark {
+      display: inline;
+    }
+  }
+
+  .post p {
+    color: #ddd;
+  }
+  .post p strong {
+    color: #ddd;
+  }
+  .post blockquote p {
+    color: #8b949e;
+  }
+  .post blockquote p code {
+    color: #8b949e;
+  }
+
+  .category-index-name {
+    font-size: 0.9em;
+  }
+  .category-index-box:hover {
+    .category-index-name,
+    .category-index-count {
+      color: #888;
+    }
+  }
+  .category-index {
+    display: grid;
+    grid-column-gap: 2em;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 1.414em 0;
+    padding: 0;
+    font-size: 1.2em;
+    list-style: none;
+  }
+  .category-index .category-index-name,
+  .category-index .category-index-count {
+    color: #aaa;
+  }
+  .category-index-count {
+    font-size: 0.8em;
+  }
+  .category-index a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0.25em 0;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid rgb(52, 56, 58);
+  }
+  @media (min-width: 64em) {
+    .category-index {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .category-section {
+    margin-top: 2em;
+  }
+  .category-section .post-separation {
+    margin: 14px 0;
+    height: 0;
+  }
+  .category-section .archive__subtitle {
+    color: #aaa;
+  }
+  .category-section .entries-box {
+    padding-bottom: 2px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .entries-box:hover {
+    transform: translateX(10px);
+
+    .entries-title,
+    .entries-date,
+    .entries-post {
+      color: #c5c5c5;
+    }
+  }
+  .category-section .entries-title {
+    margin-bottom: 0;
+    transition: color 0.1s;
+  }
+  .category-section .entries-date {
+    font-size: 0.8em;
+  }
+  .category-section .entries-post {
+    font-size: 0.9em;
+    line-height: 1em;
+    margin: 0;
+  }
+
+  .back-to-top {
+    display: block;
+    clear: both;
+    // color: #646769;
+    color: rgb(167, 160, 148);
+    font-size: 0.75em;
+    text-transform: uppercase;
+    text-align: right;
+    text-decoration: none;
+    border-bottom: 1px solid rgb(52, 56, 58);
+    // padding: 10px 0;
+    padding-bottom: 10px;
+    transition: all 0.1s;
+  }
+
+  .social [class^="icon-"] {
+    color: $dark_text_color;
+  }
+
+  #posts-label {
+    color: $dark_text_color;
+  }
+
+  @import "ext/solarized-dark";
+  .highlight,
+  .highlight * {
+    background-color: #00080a;
+    color: #93a1a1;
+  }
+
+  div.highlight-dark {
+    padding: 5px 20px;
+  }
+  pre.highlight-dark,
+  code {
+    font-family: "Consolas", Menlo, monospace;
+    line-height: 1.4em;
+    tab-size: 4;
+  }
+  code.language-plaintext {
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    background-color: rgba(110, 118, 129, 0.4);
+    border-radius: 6px;
+  }
+
+  blockquote {
+    padding: 0 1em;
+    border-left: 0.25em solid #30363d;
+    margin: 0;
+  }
+
+  .post-categories {
+    li {
+      background-color: #333;
+      color: #fff;
+      transition: color 0.3s;
+      cursor: pointer;
+    }
+
+    li:hover {
+      background-color: #404040;
+      color: #fff;
+      .post-title,
+      .post-date,
+      .post {
+        color: #f6f6f6 !important;
+      }
+    }
+  }
+
+  a {
+    color: $dark_link_color;
+  }
+  #title a {
+    color: #fff;
+    &:hover {
+      color: $dark_link_color;
+    }
+  }
+
+  .posts-labelgroup {
+    border-bottom: 2px solid #333;
+    .search-results {
+      background-color: #333;
+
+      a {
+        color: white;
+
+        &:hover {
+          background-color: #171717;
+        }
+      }
+    }
+
+    .search-section i {
+      background-color: transparent;
+    }
+  }
+
+  .posts-labelgroup:hover {
+    i {
+      color: white;
+    }
+
+    input {
+      color: white;
+    }
+  }
+
+  .posts-labelgroup.focus-within {
+    .search-section {
+      background-color: #333;
+    }
+
+    input {
+      color: $dark_text_color;
+    }
+
+    i {
+      color: white;
+    }
+  }
+}
+.dark table {
+  th,
+  td {
+    border: 1px solid #333;
+  }
+  th {
+    background-color: #0d0d0d;
+  }
+}

@@ -1,0 +1,15 @@
+- title: Education
+  layout: list
+  content:
+    - layout: left
+      left_area_vertical_align: top
+      title: Smilegate Devcamp
+      caption: 2021.03 ~ 2021.11
+      description: |
+        * 3기 수료
+    - layout: left
+      left_area_vertical_align: top
+      title: 정보처리기사
+      caption: 2022.06
+      description: |
+        * 한국산업인력공단
