@@ -35,8 +35,6 @@ plainwhite:
     #instagram: jekyll
     email: code.gnar@gmail.com
   navigation:
-    - title: Resume
-      url: "/resume"
     - title: Posts
       url: "/"
     - title: Categories
