@@ -21,7 +21,7 @@ plainwhite:
   sitemap: true
   search: true
   # analytics_id: G-HCKCGPDD5F
-  dark_mode: never
+  dark_mode: false
   portfolio_image: "assets/images/portfolio.jpeg"
   html_lang: "KR"
   condensed_mobile:
@@ -57,7 +57,7 @@ resume_email: code.gnar@gmail.com
 website: https://im-gnar.github.io
 
 # Dark Mode (true/false/never)
-darkmode: never
+darkmode: false
 
 # Social links
 linkedin_username: im-gnar
