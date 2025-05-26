@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "도메인 객체 기반 키 설계"
-date: 2025-05-17 00:22:00 +0530
-excerpt: "UUIDv7, 복합키, 그리고 타입 안전성"
-categories: DDD
-tags: spring
+title: "Virtual Thread 1"
+date: 2024-11-22 00:22:00 +0530
+excerpt: "Virtual Thread 기본"
+categories: Backend
+tags: java
 ---
 
 
